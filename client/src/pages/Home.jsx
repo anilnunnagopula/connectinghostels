@@ -14,7 +14,7 @@ const Home = () => {
     // Mobile popup
     if (window.innerWidth < 768) {
       setShowMobilePopup(true);
-      const timer = setTimeout(() => setShowMobilePopup(false), 5000);
+      const timer = setTimeout(() => setShowMobilePopup(false), 8000);
       return () => clearTimeout(timer);
     }
 

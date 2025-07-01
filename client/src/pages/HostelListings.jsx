@@ -7,7 +7,7 @@ const HostelListings = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [locationFilter, setLocationFilter] = useState("Mangalpally");
 
-  const itemsPerPage = 12; 
+  const itemsPerPage = 12;
   const hostels = [
     {
       id: 1,
@@ -91,8 +91,8 @@ const HostelListings = () => {
     },
     {
       id: 9,
-      name: "Orange Blossom CoLiving",
-      type: "Co-Living",
+      name: "Orange Blossom ",
+      type: "Boys",
       location: "Mangalpally",
       floors: 4,
       price: "₹5600/mo",
@@ -142,7 +142,7 @@ const HostelListings = () => {
     {
       id: 14,
       name: "Krishna Nilayam",
-      type: "Co-Living",
+      type: "Boys",
       location: "Mangalpally",
       floors: 4,
       price: "₹5500/mo",
@@ -171,8 +171,8 @@ const HostelListings = () => {
     },
     {
       id: 17,
-      name: "Tulasi CoLiving Homes",
-      type: "Co-Living",
+      name: "Tulasi  Homes",
+      type: "Girls",
       location: "Mangalpally",
       floors: 5,
       price: "₹5700/mo",
@@ -300,8 +300,18 @@ const HostelListings = () => {
       </div>
 
       {/* 🎯 Hostels List */}
-      {currentHostels.length > 0 ? (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {currentHostels.length === 0 ? (
+        typeFilter === "Co-Living"? (
+          <div className="text-center text-pink-600 dark:text-pink-400 text-xl mt-6 font-semibold animate-bounce">
+            😏 Hey naughty, there are no co-lives in {locationFilter}!
+          </div>
+        ) : (
+          <div className="text-center text-red-500 text-xl mt-10">
+            😕 No hostels found in <b>{locationFilter}</b>!
+          </div>
+        )
+      ) : (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-4">
           {currentHostels.map((hostel) => (
             <div
               key={hostel.id}
@@ -341,10 +351,6 @@ const HostelListings = () => {
               </div>
             </div>
           ))}
-        </div>
-      ) : (
-        <div className="text-center text-red-500 text-xl mt-10">
-          😕 No hostels found in <b>{locationFilter}</b>!
         </div>
       )}
 
