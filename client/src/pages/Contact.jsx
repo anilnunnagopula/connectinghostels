@@ -23,7 +23,7 @@
                 <FaPhone className="text-blue-600 text-xl mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg">Call Us</h3>
-                  <p>+91 93988 XXXXX</p>
+                  <p>+91 93988 28248</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:scale-[1.02] transition">

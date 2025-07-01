@@ -39,7 +39,7 @@ const AddStudent = () => {
             value={studentData.name}
             onChange={handleChange}
             className="input"
-            placeholder="e.g. Anil Yadav"
+            placeholder="e.g. Anil Rebel"
             required
           />
         </div>

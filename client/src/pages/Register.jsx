@@ -37,7 +37,6 @@ const Register = () => {
       alert("❌ Error sending OTP. Try again.");
     }
   };
-  
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -128,6 +127,7 @@ const Register = () => {
             <input
               type="text"
               name="name"
+              placeholder="Enter your name..."
               value={form.name}
               onChange={handleChange}
               required
@@ -143,6 +143,7 @@ const Register = () => {
             <input
               type="email"
               name="email"
+              placeholder="Enter your mail..."
               value={form.email}
               onChange={handleChange}
               required
@@ -151,23 +152,28 @@ const Register = () => {
           </div>
 
           {/* Phone + OTP */}
-          <div className="flex gap-2">
-            <input
-              type="number"
-              name="phone"
-              value={form.phone}
-              onChange={handleChange}
-              required
-              placeholder="Phone Number"
-              className="w-full px-2 py-2 rounded bg-gray-100 dark:bg-gray-700 dark:text-white"
-            />
-            <button
-              type="button"
-              onClick={sendOtp}
-              className="bg-blue-600 text-white px-2 rounded hover:bg-blue-700"
-            >
-              Send OTP
-            </button>
+          <div>
+            <label className="block mt-1 mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+              Number
+            </label>
+            <div className="flex gap-2">
+              <input
+                type="number"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                placeholder="Phone Number"
+                className="w-full px-2 py-2 rounded bg-gray-100 dark:bg-gray-700 dark:text-white"
+              />
+              <button
+                type="button"
+                onClick={sendOtp}
+                className="bg-blue-600 text-white px-2 rounded hover:bg-blue-700"
+              >
+                Send OTP
+              </button>
+            </div>
           </div>
 
           {/* OTP Input */}
@@ -191,6 +197,7 @@ const Register = () => {
               <input
                 type="text"
                 name="hostelName"
+                placeholder="Enter Hostel name..."
                 value={form.hostelName}
                 onChange={handleChange}
                 required
@@ -208,6 +215,7 @@ const Register = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
+                placeholder="Enter password"
                 value={form.password}
                 onChange={handleChange}
                 required
@@ -230,6 +238,7 @@ const Register = () => {
             <input
               type="password"
               name="confirmPassword"
+              placeholder="Confirm Password"
               value={form.confirmPassword}
               onChange={handleChange}
               required
